@@ -1,0 +1,18 @@
+Stack (Last in First out):
+
+pop (remove last element)
+push (add the element )
+peek ()
+
+
+dfh - 2
+hjjk  (last)  - top 1
+
+
+acount1 - initial 5000 balance 
+
+queue : 
+Subrat - baalsore (bank ICICI) - account 1 - 500 rs deposit 9:30 account 1 = 5000 +500 = 5500 locked  unclock 
+Pratyus - Bhubaneswar (bank ICICI) - account 1 - 1000 rs deposit 9:30 account1 = 5000 +1000 = 6000 (dirty check ) 6500 
+
+6500 (data inconsistency )
