@@ -14,6 +14,9 @@ public class FindStringConcurrence {
         System.out.println("String: " + mainString);
         System.out.println("Character to search: " + searchString);
         System.out.println("Occurrences of '" + searchString + "': " + maxOccurrence);
+        int[] array = {1, 5, 6, 7, 3, 9, 10, 23, 45};
+        int value = 16;
+        printPairsWithSum(array, value);
     }
 
     public static ArrayList<Integer> stringToCharList(String str, char searchString) {
@@ -42,5 +45,15 @@ public class FindStringConcurrence {
             }
         }
         return max;
+    }
+
+     public static void printPairsWithSum(int[] arr, int value) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] + arr[j] == value) {
+                    System.out.println("(" + arr[i] + ", " + arr[j] + ")");
+                }
+            }
+        }
     }
 }
