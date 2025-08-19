@@ -1,44 +1,51 @@
 package Assignments;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class FindStringConcurrence {
     public static void main(String[] args) {
-        // Example usage of the classes
         String mainString = "baannnnaaanna";
-        char searchString = 'a';
-        ArrayList<Integer> charList = stringToCharList(mainString, searchString);
-        int maxOccurrence = findMaxFromArrayList(charList);
+        char searchChar = 'a';
+        ArrayList<Integer> occurrenceList = stringToCharList(mainString, searchChar);
+        int maxOccurrence = findMaxFromArrayList(occurrenceList);
 
         System.out.println("String: " + mainString);
-        System.out.println("Character to search: " + searchString);
-        System.out.println("Occurrences of '" + searchString + "': " + maxOccurrence);
+        System.out.println("Character to search: " + searchChar);
+        System.out.println("Max consecutive occurrences of '" + searchChar + "': " + maxOccurrence);
+
         int[] array = {1, 5, 6, 7, 3, 9, 10, 23, 45};
         int value = 16;
+        System.out.println("Pairs with sum " + value + ":");
         printPairsWithSum(array, value);
     }
 
-    public static ArrayList<Integer> stringToCharList(String str, char searchString) {
+    // Returns a list of counts of consecutive occurrences of searchChar in str
+    public static ArrayList<Integer> stringToCharList(String str, char searchChar) {
         ArrayList<Integer> charList = new ArrayList<>();
-        char[] charArray = str.toCharArray(); 
         int count = 0;
-        for (char c : charArray) {
-            if (c == searchString) {
+        for (char c : str.toCharArray()) {
+            if (c == searchChar) {
                 count++;
             } else {
-                charList.add(count);
-                count = 0;
+                if (count > 0) {
+                    charList.add(count);
+                    count = 0;
+                }
             }
+        }
+        if (count > 0) {
+            charList.add(count);
         }
         return charList;
     }
 
- public static int findMaxFromArrayList(ArrayList<Integer> list) {
+    // Returns the maximum value from an ArrayList of Integers
+    public static int findMaxFromArrayList(ArrayList<Integer> list) {
         if (list == null || list.isEmpty()) {
             return 0;
         }
-        int max = 0;
+        int max = list.get(0);
         for (int num : list) {
             if (num > max) {
                 max = num;
@@ -47,13 +54,20 @@ public class FindStringConcurrence {
         return max;
     }
 
-     public static void printPairsWithSum(int[] arr, int value) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] + arr[j] == value) {
-                    System.out.println("(" + arr[i] + ", " + arr[j] + ")");
+    // Prints all unique pairs in arr that sum to value using a HashSet (single loop)
+    public static void printPairsWithSum(int[] arr, int value) {
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<String> printed = new HashSet<>();
+        for (int num : arr) {
+            int complement = value - num;
+            if (seen.contains(complement)) {
+                String pair = "(" + Math.min(num, complement) + ", " + Math.max(num, complement) + ")";
+                if (!printed.contains(pair)) {
+                    System.out.println(pair);
+                    printed.add(pair);
                 }
             }
+            seen.add(num);
         }
     }
 }
