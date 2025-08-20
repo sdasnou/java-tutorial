@@ -1,25 +1,18 @@
-Map
-s          1
-Key --->   value 2 
-string -> value (anything) 
-
-index = 0 7
-list <Integer> count =  0th index 7
+Stack 
+Last in First out 
+1
+2
 3
-index 0  index 1 index 2 index 3 index 4 index 5 
-s0       j1      k2      d3      h4      f5
+4
+5 //first retrieve 
 
-
-sssssjksjdfhdsjf
-
-
-List <Character> 
-
-
-sssssjksjdfhdsjf
-s = 7 j = 3 k = 1 d = 2 h = 1 f =1
-
-Character, In
+Queue 
+First in First out
+1 //retrieve first 
+2
+3
+4
+5 
 
 
 

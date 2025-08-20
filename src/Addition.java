@@ -22,33 +22,35 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
-public class Addition {
-    public static void main(String[] args) throws RuntimeException{
-      Map<String, Integer> map = new ConcurrentHashMap<>();
-      
-        Runnable data = () -> {
-            for (int i =0; i< 1000; i++){
-                map.put("key" +i, i);
-            }
-        };
-        Thread t1 = new Thread(data); 
-        Thread t2 = new Thread(data); 
-        t1.start();
-        t2.start();
-        try {
-            t1.join();
-            t2.join();
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        System.out.println(map.size());
+class Addition  extends Abstractclass{ //parent class (Grandpa's son)
+    private  int a = 20;
 
-    } 
+    private int addition(int a , int b) {
+        return a+b;
+    }
+
+    public int subtracts(int a , int b) {
+        return a-b;
+    }
+
+    // public String getName(){
+    //     return "Addition";
+    // }
+
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public static void main(String[] args) {
+       Addition obj = new Addition();
+    }
 
     //concurrency issue in hashmap     
 }
-
 
             
