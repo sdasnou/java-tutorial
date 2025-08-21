@@ -8,3 +8,4 @@ public class Calling {
         System.out.println("Current value: " + encapsulation.getValue());
     }
 }
+ 
