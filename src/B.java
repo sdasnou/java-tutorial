@@ -1,4 +1,8 @@
 interface B {
   
-    void withdraw ();
+    default void withdraw () {
+        System.out.println("interface");
+    }
+    void deposit ();
+    void interest();
 }
