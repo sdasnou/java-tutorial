@@ -1,3 +1,7 @@
+import B;
+import C;
+
+package Inheritance;
 public class InterfaceTest {
     public static void main(String[] args) {
         
