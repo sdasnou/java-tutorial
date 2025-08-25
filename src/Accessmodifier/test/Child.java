@@ -2,7 +2,13 @@ package Accessmodifier.test;
 
 import Inheritance.Parent;
 
-public class Child{
+public class Child extends Parent1{
+
+    @Override
+    public final void display (){
+        this.a = 20;
+        System.out.println("child");
+    }
     public static void main(String[] args) {
         
         //Child ch = new Child();

@@ -1,4 +1,4 @@
-package Inheritance; //folder
+package Accessmodifier.test; //folder
 
 
 public class Parent1 {
@@ -8,6 +8,7 @@ public class Parent1 {
     int d = 40;
 
     public void display (){
+        this.a = 20;
         System.out.println("public");
     }
     private String display1(){
