@@ -4,3 +4,14 @@ changes allowed
 
 Immutable
 changes not allowed 
+
+2types 
+
+
+Rules for create Immutable class
+------------------------------
+final class (avoid inheritance)
+private variable (retrict access)
+getter //public to get the data  (public access of the value)
+no setter method (prevent setting the value)
+constructor(value can be assigned) (assigned once the value)
