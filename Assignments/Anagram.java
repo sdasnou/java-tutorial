@@ -33,7 +33,7 @@ public class Anagram {
         return anagrams;
     }
 
-    // Helper method to sort characters in a string
+    // sort characters in a string
     static String sortString(String str) {
         char[] chars = str.toCharArray();
         Arrays.sort(chars);
