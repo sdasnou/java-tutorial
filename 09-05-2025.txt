@@ -1,0 +1,11 @@
+
+// wait unit current threads is not finished (join())
+//yield same priority thread can get a chance to excute
+//wait() //current thread will be paused
+//notify() // queued one pending thread that will resume execution
+//notifall() // queued all pending thread that will resume execution
+//Thread.sleep(millisecond) //current thread wait that 
+//Sychronization method1 () --> allow one thread to excute a method in a given time
+2 types - method level(Object level) / block level (class level)
+
+     
