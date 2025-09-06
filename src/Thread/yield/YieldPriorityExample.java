@@ -26,10 +26,18 @@ public class YieldPriorityExample {
 
         low.setPriority(Thread.MIN_PRIORITY);   
         normal.setPriority(Thread.NORM_PRIORITY); 
-        high.setPriority(Thread.MAX_PRIORITY);  
+        high.setPriority(Thread.NORM_PRIORITY);  
 
         low.start();
-        normal.start();
-        high.start();
+        try {
+            low.join();
+            normal.start();
+            normal.join();
+            high.start();
+            high.join();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        
     }
 }
