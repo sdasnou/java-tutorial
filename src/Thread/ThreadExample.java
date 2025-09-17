@@ -8,8 +8,8 @@ public class ThreadExample extends Thread{
         }
     }
 
-    public static void main(String[] args) {
-        ThreadExample obj1 = new ThreadExample();
+    public static void main(String[] args) { //daemon (backgound thread)
+        ThreadExample obj1 = new ThreadExample(); //child thread
         obj1.setName("thread1");
         
         
