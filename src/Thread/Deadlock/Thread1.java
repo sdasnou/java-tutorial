@@ -28,19 +28,16 @@ public class Thread1 extends Thread {
             }
             
         }
-        
     }
 
-    private synchronized String getData(){ //object level locking 
+    // private synchronized String getData(){ //object level locking 
 
-    }
+    //     return null;
+    // }
 
-    Resource r1= new Resource("test");
-    r1.start()
-    Resource r2= new Resource("test");
+    // Resource r1= new Resource("test");
+    // r1.start()
+    // Resource r2= new Resource("test");
 
     
-    synchronized(r1){
-        
-    }
 }

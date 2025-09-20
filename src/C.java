@@ -5,9 +5,9 @@ public abstract class C  implements B {
        System.out.println("C method");
     }
 
-    @Override
-    public void display() {
+    // @Override
+    // public void display() {
       
-    }
+    // }
     
 }
